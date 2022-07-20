@@ -81,7 +81,7 @@
       <td th:text = "${student.phonenum}">  </td>
       <td th:text = "${student.birthyear}">  </td>
 
-      <td>
+      <td sec:authorize="hasRole('ROLE_ADMIN')">
         <a th:href="@{/students/edit/{id}(id=${student.id})}" class = "btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i>   Update</a>
 
         <a th:href="@{/students/{id}(id=${student.id})}" class = "btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>    Delete</a>
